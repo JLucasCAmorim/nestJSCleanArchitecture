@@ -1,5 +1,5 @@
 import { ILogger } from '../../../shared/infra/logger/model/logger.interface';
-import { TodoM } from '../model/todo';
+import { TodoM } from '../dtos/todo.dto';
 import { TodoRepository } from '../repositories/todoRepository.interface';
 
 export class AddTodoUseCases {
