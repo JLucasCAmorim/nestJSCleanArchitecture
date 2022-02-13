@@ -21,10 +21,11 @@ services:
     environment:
       NODE_ENV: development
       PORT: 3000
+      DATABASE_HOST: postgres
 
   postgres:
     image: postgres:14.2
-    container_name: api-db
+    container_name: api-postgres
     restart: always
     ports:
       - 5432:5432
