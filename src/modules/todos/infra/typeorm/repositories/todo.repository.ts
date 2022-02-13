@@ -24,7 +24,6 @@ export class DatabaseTodoRepository implements TodoRepository {
   async insert(todo: TodoM): Promise<TodoM> {
     const todoEntity = DatabaseTodoRepository.toTodoEntity(todo);
     const result = await this.todoEntityRepository.insert(todoEntity);
-    console.log(result.generatedMaps);
     return DatabaseTodoRepository.toTodo(result.generatedMaps[0] as Todo);
   }
 

@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      # Only will build development stage from our dockerfile
+      target: development
+    container_name: api-backend
+    ports:
+      - 3000:3000
+    # Mount our host Directory to the docker container
+    # Mount (.) current directory to the docker container usr/src/app
+    # reflect file changes from host to container
+    volumes:
+      - .:/usr/src/app
+      - ./usr/src/app/node_modules
+    command: npm run start:dev
+    depends_on:
+      - postgres
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+
+  postgres:
+    image: postgres:14.2
+    container_name: api-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=pets
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis
+    container_name: api-redis
+    ports:
+      - 6379:6379

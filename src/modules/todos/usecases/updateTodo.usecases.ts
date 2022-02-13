@@ -1,4 +1,4 @@
-import { ILogger } from '../../../shared/infra/logger/model/logger.interface';
+import { ILogger } from '../../../shared/containers/providers/logger/model/logger.interface';
 import { TodoRepository } from '../repositories/todoRepository.interface';
 
 export class UpdateTodoUseCases {

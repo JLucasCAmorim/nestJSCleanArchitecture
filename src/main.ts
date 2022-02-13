@@ -2,7 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { LoggerService } from './shared/infra/logger/logger.service';
+import { LoggerService } from './shared/containers/providers/logger/logger.service';
 import { AllExceptionFilter } from './shared/common/filter/exception.filter';
 import {
   ResponseFormat,

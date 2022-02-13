@@ -5,7 +5,7 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { LoggerService } from '../../infra/logger/logger.service';
+import { LoggerService } from '../../containers/providers/logger/logger.service';
 
 interface IError {
   message: string;
