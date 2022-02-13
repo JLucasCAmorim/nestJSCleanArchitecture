@@ -39,7 +39,7 @@ $ yarn install
 
 # if you are running the development server for the first time
 $ docker-compose up -d --build
-$ yarn seed:initial
+
 $ yarn migration:run
 
 # running on docker
